@@ -1,0 +1,81 @@
+import React from 'react'
+import ViewEventsAdultSection from '../Pages/ViewEventsAdultSection'
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
+
+const Navbar = () => {
+  return (
+    <header className="absolute inset-x-0 top-0 z-50">
+      <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <div className="flex lg:flex-1">
+          <Link to="/" className="-m-1.5 p-1.5">
+            <img 
+              src="https://cdn.discordapp.com/attachments/738139138208825407/1167936216105226310/nothing_2.png?ex=654ff05d&is=653d7b5d&hm=b62886892d741a1d4b39ca4d7c1bcd0fbf0b844e21eba3feb278a29b11aae5ba&" 
+              alt="A.I.utism Logo" 
+              className="w-64"  // You can adjust the height and width as required
+            />
+          </Link>
+        </div>
+
+        <div className="flex lg:hidden">
+          <button type="button" className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+            <span className="sr-only">Open main menu</span>
+            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
+        </div>
+        <div className="hidden lg:flex lg:gap-x-12">
+          <Link to="/" className="text-sm font-semibold leading-6 text-gray-900">Home</Link>
+          <Link to="Features" className="text-sm font-semibold leading-6 text-gray-900">Features</Link>          
+          <Link to="ViewEventsAdultSection" className="text-sm font-semibold leading-6 text-gray-900">Community Events</Link>
+          <Link to="Volunteer" className="text-sm font-semibold leading-6 text-gray-900">Volunteer</Link>
+          <Link to="ShareStories" className="text-sm font-semibold leading-6 text-gray-900">Share Stories</Link>
+          <Link to="IBMLearn" className="text-sm font-semibold leading-6 text-gray-900">IBM Learn Expressions</Link>
+        </div>
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <Link to="/" className="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></Link>
+        </div>
+      </nav>
+      {/* <!-- Mobile menu, show/hide based on menu open state. --> */}
+      <div className="lg:hidden" role="dialog" aria-modal="true">
+        {/* <!-- Background backdrop, show/hide based on slide-over state. --> */}
+        <div className="fixed inset-0 z-50"></div>
+        <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div className="flex items-center justify-between">
+            <Link to="/" className="-m-1.5 p-1.5">
+              <span className="sr-only">Your Company</span>
+              <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+            </Link>
+            <button type="button" className="-m-2.5 rounded-md p-2.5 text-gray-700">
+              <span className="sr-only">Close menu</span>
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div className="mt-6 flow-root">
+            <div className="-my-6 divide-y divide-gray-500/10">
+            <div className="space-y-2 py-6">
+    <Link to="/" className="block px-3 py-2 text-base font-semibold leading-7 gradient-text">Home</Link>
+    <Link to="Features" className="block px-3 py-2 text-base font-semibold leading-7 gradient-text">Features</Link>
+    <Link to="ViewEventsAdultSection" className="block px-3 py-2 text-base font-semibold leading-7 gradient-text">Community Events</Link>
+    <Link to="Volunteer" className="block px-3 py-2 text-base font-semibold leading-7 gradient-text">Volunteer</Link>
+    <Link to="ShareStories" className="block px-3 py-2 text-base font-semibold leading-7 gradient-text">Share Stories</Link>
+</div>
+
+
+
+              <div className="py-6">
+                <Link to="/" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</Link>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+  )
+}
+
+export default Navbar
